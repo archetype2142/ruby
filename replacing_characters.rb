@@ -6,7 +6,9 @@ user_input.downcase!
 
 if user_input.include? "s"
     user_input.gsub!(/s/, "th")
-    print "#{user_input}\n"
 else
 	print "nothing to do here\n"
 end
+
+#Can also use puts instead
+print "\nNew Sting: #{user_input}\n"
