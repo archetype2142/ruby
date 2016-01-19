@@ -1,6 +1,6 @@
 #simple Exception Handling Example
 puts 'Enter divident and divisor on this equation'
-puts "result=divident/divisord"
+puts "result=divident/divisor"
 begin
   num_format=/^[-+]?(\d*[.])?\d+$/
 
@@ -19,7 +19,7 @@ begin
   result = divident.to_f / divisor.to_f
   puts result
 rescue ZeroDivisionError
-  puts "Warning:Divisor can't be zero"
+  puts "Warning: Divisor can't be zero"
 rescue Exception => e
   puts e.message
 end
