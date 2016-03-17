@@ -8,6 +8,9 @@ my_hash = { "name" => "Eric",
   "hungry?" => true
 }
 
-puts my_hash["name"]
-puts my_hash["age"]
-puts my_hash["hungry?"]
+puts "Current Hash \n  =>my_hash: #{my_hash}"
+puts "Get By Key\"age\" \n  =>my_hash[age]: #{my_hash['age']}"
+puts "Store new key-value in my_hash \n  =>my_hash.store 'new_one','oops'"
+my_hash.store 'new_one','oops'
+puts "New Hash \n  =>my_hash: #{my_hash}"
+
