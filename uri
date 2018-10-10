@@ -1,7 +1,10 @@
 #!/usr/bin/env ruby
 require 'open-uri'
-require 'archetype2142_palindrome'
-require 'fileutils'
+require 'nokogiri'
 
-lines = open('https://cdn.learnenough.com/phrases.txt').readlines.select(&:palindrome?)
-File.write('palindromes_url.txt', lines.join)
+# Returns the paragraphs from a Wikipedia link, stripped of reference numbers.
+# Especially useful for text-to-speech (both native and foreign).
+url = ARGV[0]
+doc = Nokogiri::HTML(open(url).read)
+doc.css('.reference').each{&:remove}
+puts doc.css('p').map(&:content).join("\n")
