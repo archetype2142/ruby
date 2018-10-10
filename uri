@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+require 'open-uri'
+require 'archetype2142_palindrome'
+require 'fileutils'
+
+lines = open('https://cdn.learnenough.com/phrases.txt').readlines.select(&:palindrome?)
+File.write('palindromes_url.txt', lines.join)
